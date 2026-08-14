@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alessandra Riul — Operations & Business Performance Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#21442E; --gold:#977226; --offwhite:#FAF7F0; --charcoal:#2B2B28;
+    --green-tint:#5C7A68; --gold-tint:#B99A56; --white:#FFFFFF; --border:#E5DFCE;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--offwhite);color:var(--charcoal);font-family:'Source Sans 3',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  a{color:inherit;}
+  h1,h2,h3{font-family:'Fraunces',serif;margin:0;}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:56px 0 40px;border-bottom:2px solid var(--green);}
+  .hero-top{display:flex;align-items:center;gap:16px;margin-bottom:18px;}
+  h1{font-size:34px;font-weight:600;color:var(--gold);letter-spacing:-0.01em;}
+  .role-line{font-size:14.5px;font-weight:600;color:var(--green-tint);text-transform:uppercase;letter-spacing:.05em;margin-top:6px;}
+  .tagline-rule{width:52px;height:2px;background:var(--gold);margin:14px 0;}
+  .tagline{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--green);margin-bottom:18px;}
+  .about{max-width:700px;font-size:15px;color:var(--charcoal);}
+  .contact-row{display:flex;gap:22px;flex-wrap:wrap;margin-top:20px;font-size:13.5px;}
+  .contact-row a{text-decoration:none;font-weight:600;color:var(--green);border-bottom:1px solid var(--green-tint);padding-bottom:1px;}
+  .contact-row span{color:var(--charcoal);opacity:.65;}
+
+  /* ---------- Stat cards ---------- */
+  section{padding:44px 0;}
+  .section-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:6px;}
+  .section-title{font-size:22px;font-weight:600;margin-bottom:22px;}
+  .stat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+  .stat-card{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--green);border-radius:6px;padding:18px 14px;text-align:center;}
+  .stat-num{font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:var(--gold);}
+  .stat-label{font-size:11.5px;color:var(--charcoal);opacity:.75;margin-top:4px;line-height:1.3;}
+
+  /* ---------- Timeline ---------- */
+  .timeline{border-left:2px solid var(--border);padding-left:26px;margin-left:6px;}
+  .t-item{position:relative;padding-bottom:22px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{content:'';position:absolute;left:-32px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--green);border:2px solid var(--offwhite);}
+  .t-dates{font-size:11.5px;color:var(--green-tint);font-weight:700;text-transform:uppercase;letter-spacing:.04em;}
+  .t-role{font-size:15px;font-weight:700;color:var(--charcoal);margin-top:2px;}
+  .t-org{font-size:13px;color:var(--charcoal);opacity:.7;}
+
+  /* ---------- Chips ---------- */
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-size:12.5px;font-weight:600;color:var(--charcoal);}
+  .chip.green{background:var(--green);color:var(--white);border-color:var(--green);}
+
+  /* ---------- Two-col ---------- */
+  .two-col{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;}
+  .skills-group{margin-bottom:18px;}
+  .skills-group h4{font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--green-tint);font-weight:700;margin-bottom:8px;}
+
+  /* ---------- Languages ---------- */
+  .lang-row{display:grid;grid-template-columns:100px 1fr 90px;align-items:center;gap:10px;margin-bottom:10px;font-size:13px;}
+  .lang-track{height:8px;background:var(--white);border:1px solid var(--border);border-radius:5px;overflow:hidden;}
+  .lang-fill{height:100%;background:var(--gold);}
+
+  /* ---------- Work cards ---------- */
+  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .work-card{background:var(--white);border:1px solid var(--border);border-radius:7px;padding:20px 22px;display:flex;flex-direction:column;gap:10px;}
+  .work-card.featured{border:2px solid var(--gold);background:linear-gradient(180deg,#FFFDF7,#FFFFFF);}
+  .badge{display:inline-block;align-self:flex-start;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+    padding:3px 10px;border-radius:20px;}
+  .badge.live{background:var(--green);color:var(--white);}
+  .badge.doc{background:var(--gold-tint);color:var(--white);}
+  .badge.video{background:var(--green-tint);color:var(--white);}
+  .badge.tableau{background:#D9D2BE;color:var(--charcoal);}
+  .work-title{font-family:'Fraunces',serif;font-size:16.5px;font-weight:600;color:var(--charcoal);}
+  .work-desc{font-size:13px;color:var(--charcoal);opacity:.75;flex-grow:1;}
+  .work-btn{align-self:flex-start;font-size:12.5px;font-weight:700;color:var(--white);background:var(--green);
+    padding:8px 16px;border-radius:5px;text-decoration:none;transition:background .15s ease;}
+  .work-btn:hover{background:#163020;}
+  .work-note{font-size:11.5px;color:var(--charcoal);opacity:.6;font-style:italic;}
+
+  footer{border-top:2px solid var(--green);padding:32px 0 48px;text-align:center;}
+  footer .tagline{margin-bottom:8px;}
+  footer .contact-row{justify-content:center;}
+
+  @media (max-width:820px){
+    .stat-grid{grid-template-columns:repeat(2,1fr);}
+    .two-col{grid-template-columns:1fr;}
+    .work-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-top">
+      <svg width="46" height="46" viewBox="0 0 34 34" fill="none">
+        <path d="M17 2C9 2 3 9 3 18c0 6 4 11 9 13 0-9 2-16 8-20-5 5-6 12-6 20 5-1 10-6 10-13 0-9-3-16-7-16Z" fill="#21442E"/>
+        <path d="M9 24l3-5 3 3 4-7 3 4" stroke="#FAF7F0" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <h1>Alessandra Riul</h1>
+        <div class="role-line">Hospitality Specialist · Process &amp; Performance Strategy · Business Operations &amp; ESG Integration</div>
+      </div>
+    </div>
+    <div class="tagline-rule"></div>
+    <div class="tagline">Structured. Measurable. Sustainable.</div>
+    <p class="about">Business operations leader with 15+ years of international experience directing complex hospitality and service operations across multiple countries. Expertise in Business Process Management, organizational structuring, financial governance, and performance optimization — building scalable systems and aligning teams around measurable objectives. Seeking senior operational leadership roles to contribute at a strategic level.</p>
+    <div class="contact-row">
+      <a href="mailto:alessandrariul@gmail.com">alessandrariul@gmail.com</a>
+      <a href="https://linkedin.com/in/alessandrariul" target="_blank">linkedin.com/in/alessandrariul</a>
+      <span>Based in Dublin, Ireland · Available internationally</span>
+      <span>EU passport holder (Italian / Brazilian)</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">15+</div><div class="stat-label">Years International Experience</div></div>
+      <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">Countries — Hands-On Operations</div></div>
+      <div class="stat-card"><div class="stat-num">100</div><div class="stat-label">Person Workforce Coordinated (Sandy Bay Resort)</div></div>
+      <div class="stat-card"><div class="stat-num">25%</div><div class="stat-label">Operational Waste Reduction (Bar do Meio)</div></div>
+      <div class="stat-card"><div class="stat-num">15%</div><div class="stat-label">Scheduling Productivity Gain (Bar do Meio)</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Featured Work</div>
+    <div class="section-title">Portfolio &amp; Live Demonstrations</div>
+    <div class="work-grid">
+
+      <div class="work-card featured">
+        <span class="badge live">Live Interactive Demo</span>
+        <div class="work-title">F&amp;B Outlet Performance &amp; Budget Tracker</div>
+        <div class="work-desc">A fully interactive budget-vs-actual dashboard built from a monthly P&amp;L model for a fictitious multi-outlet resort — demonstrates financial modeling, KPI tracking, and modern reporting tool fluency. Click through, filter by outlet, toggle board/table views.</div>
+        <a class="work-btn" href="fb-outlet-tracker.html">Open Live Dashboard →</a>
+      </div>
+
+      <div class="work-card">
+        <span class="badge doc">Deck</span>
+        <div class="work-title">Business Operations Portfolio</div>
+        <div class="work-desc">Full presentation covering career history, methodology, and case studies across hospitality operations roles.</div>
+        <a class="work-btn" href="https://docs.google.com/presentation/d/1jC8oegJF9Q0bXtpSty26D-F_WlhKpPVa/edit?usp=sharing&ouid=104864751341889537460&rtpof=true&sd=true" target="_blank">View Deck →</a>
+      </div>
+
+      <div class="work-card">
+        <span class="badge doc">PDF</span>
+        <div class="work-title">Business Operations Consulting Portfolio</div>
+        <div class="work-desc">Consolidated PDF profile — career summary, competencies, and selected achievements in document form.</div>
+        <a class="work-btn" href="https://drive.google.com/file/d/1S-6jdQsbu_yleo-pn7X9svLCx9PvFHsE/view?usp=sharing" target="_blank">View PDF →</a>
+      </div>
+
+      <div class="work-card">
+        <span class="badge tableau">Tableau</span>
+        <div class="work-title">Hotel Monthly Performance Dashboard</div>
+        <div class="work-desc">Tableau workbook tracking monthly hotel operational and financial performance metrics.</div>
+        <a class="work-btn" href="https://drive.google.com/file/d/1PnkaOVXegeZTvs_ZL5URoCjNMsxXaPng/view?usp=sharing" target="_blank">Download (.twbx) →</a>
+        <div class="work-note">Requires Tableau Desktop or the free Tableau Reader to open.</div>
+      </div>
+
+      <div class="work-card">
+        <span class="badge tableau">Tableau</span>
+        <div class="work-title">ESG-Integrated Operations &amp; Cost Control Dashboard</div>
+        <div class="work-desc">Tableau workbook combining ESG metrics with operational cost control tracking.</div>
+        <a class="work-btn" href="https://drive.google.com/file/d/1aXq7wcURSUh8-PgNbVw2cyUXXzYHHkE-/view?usp=sharing" target="_blank">Download (.twbx) →</a>
+        <div class="work-note">Requires Tableau Desktop or the free Tableau Reader to open.</div>
+      </div>
+
+      <div class="work-card">
+        <span class="badge video">Video</span>
+        <div class="work-title">Service Training — Nusa Lembongan</div>
+        <div class="work-desc">On-site hospitality service training footage from Sandy Bay Resort, Indonesia.</div>
+        <a class="work-btn" href="https://drive.google.com/file/d/1SR6K1KHCWk5UwesaeRP7Ues9fyoTImXg/view?usp=sharing" target="_blank">Watch Video →</a>
+      </div>
+
+      <div class="work-card">
+        <span class="badge video">Video</span>
+        <div class="work-title">Hospitality Service Training — Sandy Bay Resort</div>
+        <div class="work-desc">Team training session covering guest-service standards at the resort's F&amp;B outlets.</div>
+        <a class="work-btn" href="https://drive.google.com/file/d/1UNEmZICLZtfLH3v4Yp32FZaSCG8BSvLo/view?usp=sharing" target="_blank">Watch Video →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="two-col">
+    <div>
+      <div class="section-label">Career</div>
+      <div class="section-title">Timeline</div>
+      <div class="timeline">
+        <div class="t-item"><div class="t-dates">May 2023 – Aug 2024</div><div class="t-role">Project Manager &amp; General Manager</div><div class="t-org">Ennea Hotel · Puerto Escondido, Mexico</div></div>
+        <div class="t-item"><div class="t-dates">Jan 2022 – Present</div><div class="t-role">Management Consultant</div><div class="t-org">Alessandra Riul Management MEI · International</div></div>
+        <div class="t-item"><div class="t-dates">Feb 2021 – Aug 2021</div><div class="t-role">Operations Manager</div><div class="t-org">Bar do Meio · Fernando de Noronha, Brazil</div></div>
+        <div class="t-item"><div class="t-dates">Sep 2018 – Mar 2020</div><div class="t-role">General Manager</div><div class="t-org">Sandy Bay Resort · Nusa Lembongan, Indonesia</div></div>
+        <div class="t-item"><div class="t-dates">Feb 2017 – Sep 2018</div><div class="t-role">Duty Manager</div><div class="t-org">The Garden Shed · Auckland, New Zealand</div></div>
+        <div class="t-item"><div class="t-dates">Nov 2011 – Jan 2017</div><div class="t-role">Private/Business English Teacher</div><div class="t-org">Alessandra Riul MEI · Brazil</div></div>
+        <div class="t-item"><div class="t-dates">Sep 2006 – Sep 2010</div><div class="t-role">Bistro Manager</div><div class="t-org">Bondi Hotel · Sydney, Australia</div></div>
+        <div class="t-item"><div class="t-dates">Jul 1998 – Feb 2006</div><div class="t-role">Administrative Assistant</div><div class="t-org">NR Accounting &amp; APAE · Ribeirão Preto, Brazil</div></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">International Reach</div>
+      <div class="section-title">Countries Worked In</div>
+      <div class="chip-row" style="margin-bottom:28px;">
+        <span class="chip green">Brazil</span><span class="chip green">Australia</span>
+        <span class="chip green">New Zealand</span><span class="chip green">Indonesia</span>
+        <span class="chip green">Mexico</span>
+      </div>
+
+      <div class="section-label">Communication</div>
+      <div class="section-title">Languages</div>
+      <div class="lang-row"><span>English</span><div class="lang-track"><div class="lang-fill" style="width:100%"></div></div><span>C2 / Full Pro</span></div>
+      <div class="lang-row"><span>Portuguese</span><div class="lang-track"><div class="lang-fill" style="width:100%"></div></div><span>Native</span></div>
+      <div class="lang-row"><span>Spanish</span><div class="lang-track"><div class="lang-fill" style="width:82%"></div></div><span>Full Pro</span></div>
+      <div class="lang-row"><span>Italian</span><div class="lang-track"><div class="lang-fill" style="width:30%"></div></div><span>Elementary</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Expertise</div>
+    <div class="section-title">Core Competencies &amp; Technical Skills</div>
+    <div class="skills-group">
+      <h4>Operations &amp; Leadership</h4>
+      <div class="chip-row">
+        <span class="chip">Hospitality Management</span><span class="chip">Business Process Management (BPM)</span>
+        <span class="chip">Cross-functional Coordination</span><span class="chip">Change Management</span>
+        <span class="chip">SOPs &amp; Training Frameworks</span><span class="chip">Stakeholder Management</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <h4>Financial Analysis</h4>
+      <div class="chip-row">
+        <span class="chip">F&amp;B Cost Control</span><span class="chip">Margin Analysis</span>
+        <span class="chip">COGS &amp; P&amp;L Statements</span><span class="chip">Budget Forecasting</span>
+        <span class="chip">Pricing Strategy</span><span class="chip">ROI Projections</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <h4>Systems &amp; Data</h4>
+      <div class="chip-row">
+        <span class="chip">ERP / CRM / POS Implementation</span><span class="chip">Power BI</span>
+        <span class="chip">Excel (Advanced)</span><span class="chip">KPI Dashboards</span>
+        <span class="chip">Financial Modeling</span><span class="chip">MySQL</span>
+      </div>
+    </div>
+    <div class="skills-group">
+      <h4>ESG &amp; Sustainability</h4>
+      <div class="chip-row">
+        <span class="chip">ESG Integration</span><span class="chip">CSRD / GRI Reporting Frameworks</span>
+        <span class="chip">Waste Reduction</span><span class="chip">Resource Efficiency</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="tagline">Structured. Measurable. Sustainable.</div>
+    <div class="contact-row">
+      <a href="mailto:alessandrariul@gmail.com">alessandrariul@gmail.com</a>
+      <a href="https://linkedin.com/in/alessandrariul" target="_blank">linkedin.com/in/alessandrariul</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
